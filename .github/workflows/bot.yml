@@ -21,7 +21,16 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+           - name: Show files
+        run: |
+          pwd
+          ls -la
+          find . -maxdepth 3 -type f
+
       - name: Start Telegram bot
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: python bot.py - name: Start Telegram bot
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
                         run: python bot.py
