@@ -27,7 +27,8 @@ jobs:
           ls -la
           find . -maxdepth 3 -type f
 
-      - name: Start Telegram bot
+            - name: Start Telegram bot
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
         run: python bot.py
