@@ -79,7 +79,7 @@ def get_address(message):
         f"Оғирлиги: {data['weight']}\n"
         f"Олиш усули: {data['delivery']}\n"
         f"Исми: {data['name']}\n"
-        fТелефон: {data['phone']}\n"
+        f"Телефон: {data['phone']}\n"
         f"Манзил: {data['address']}\n"
         f"Telegram ID: {message.chat.id}"
     )
