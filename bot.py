@@ -41,7 +41,7 @@ def product(message):
     orders.setdefault(message.chat.id, {})
     orders[message.chat.id]["product"] = message.text
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    keyboard.row("500 грамм", "1 кг")
+    keyboard.row("1 кг", "2 кг", "3 кг")
     bot.send_message(message.chat.id, "Оғирлигини танланг:", reply_markup=keyboard)
 
 @bot.message_handler(func=lambda m: m.text in ["500 грамм", "1 кг"])
