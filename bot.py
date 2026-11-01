@@ -25,8 +25,20 @@ def start(message):
 def myid(message):
     bot.reply_to(message, f"Sizning Telegram ID: {message.chat.id}")
 
-@bot.message_handler(func=lambda m: m.text in ["🇺🇿 O‘zbekcha", "🇨🇦 English"])
 def language(message):
+    lang = "uz" if message.text == "🇺🇿 O‘zbekcha" else "en"
+    orders[message.chat.id] = {"language": lang}
+
+    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+
+    if lang == "uz":
+        keyboard.row("Қайнатилган рулет", "Дудланган рулет")
+        keyboard.row("Пиширилган рулет", "Зираворли рулет")
+        bot.send_message(message.chat.id, "Маҳсулот турини танланг:", reply_markup=keyboard)
+    else:
+        keyboard.row("Boiled beef roll", "Smoked beef roll")
+        keyboard.row("Baked beef roll", "Spiced beef roll")
+        bot.send_message(message.chat.id, "Choose product type:", reply_markup=keyboard)
     orders[message.chat.id] = {"language": message.text}
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     keyboard.row("Қайнатилган рулет", "Дудланган рулет")
