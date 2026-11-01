@@ -1,0 +1,11 @@
+import telebot
+
+TOKEN = "BOT_TOKENINGIZ"
+
+bot = telebot.TeleBot(TOKEN)
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.reply_to(message, "Assalomu alaykum! Golden Meat botiga xush kelibsiz!")
+
+bot.infinity_polling()
