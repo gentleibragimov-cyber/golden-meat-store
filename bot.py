@@ -44,7 +44,7 @@ def product(message):
     keyboard.row("1 кг", "2 кг", "3 кг")
     bot.send_message(message.chat.id, "Оғирлигини танланг:", reply_markup=keyboard)
 
-@bot.message_handler(func=lambda m: m.text in ["500 грамм", "1 кг"])
+@bot.message_handler(func=lambda m: m.text in ["1 кг", "2 кг", "3 кг"])
 def weight(message):
     orders.setdefault(message.chat.id, {})
     orders[message.chat.id]["weight"] = message.text
