@@ -1,6 +1,10 @@
+import os
 import telebot
 
-TOKEN = "BOT_TOKENINGIZ"
+TOKEN = os.getenv("BOT_TOKEN")
+
+if not TOKEN:
+    raise RuntimeError("BOT_TOKEN topilmadi")
 
 bot = telebot.TeleBot(TOKEN)
 
