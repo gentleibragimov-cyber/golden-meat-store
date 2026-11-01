@@ -15,7 +15,10 @@ orders = {}
 def start(message):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     keyboard.row("🇺🇿 O‘zbekcha", "🇨🇦 English")
-    bot.send_message(
+        photo = open("golden-meat.jpg", "rb")
+    bot.send_photo(message.chat.id, photo, caption="🥩 GOLDEN MEAT")
+    photo.close()
+bot.send_message(
         message.chat.id,
         "🥩 Golden Meat — Edmonton\nTilni tanlang / Choose language:",
         reply_markup=keyboard
