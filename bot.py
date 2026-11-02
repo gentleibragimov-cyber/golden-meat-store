@@ -296,7 +296,7 @@ def start(message):
 
     send_image(chat_id, "banner")
     markup = make_keyboard(
-        ["English", "O'zbekcha", "Русский"],
+        ["🇨🇦 English", "🇺🇿 O'zbekcha", "🇷🇺 Русский"]
         columns=3
     )
     bot.send_message(
@@ -337,14 +337,14 @@ def handle_message(message):
     # Language selection
     if step == "language":
         language_map = {
-            "English": "en",
-            "O'zbekcha": "uz",
-            "Русский": "ru"
+            "🇨🇦 English": "en",
+            "🇺🇿 O'zbekcha": "uz",
+            "🇷🇺 Русский": "ru",
         }
 
         if text not in language_map:
             show_language = make_keyboard(
-                ["English", "O'zbekcha", "Русский"],
+                ["🇨🇦 English", "🇺🇿 O'zbekcha", "🇷🇺 Русский"]
                 columns=3
             )
             bot.send_message(
